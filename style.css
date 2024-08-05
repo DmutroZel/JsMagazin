@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Montserrat;
+}
+.akchiya{
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cartAkchiya{
+    width: 20%;
+    min-height: 15vh;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.cartPhoto{                                              
+    width: 30%;
+    height: 15vh;
+    background-image: url('images/monitorCart.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 0 5px;
+}
+.cartPhoto2{
+    width: 30%;
+    height: 15vh;
+    background-image: url('images/blackHeadPhones.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+      
+}
+.cartPhoto3{
+    width: 30%;
+    height: 15vh;
+    background-image: url('images/pinkHeadPhones.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+      
+}
+.cartText{
+    width: 70%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 20px;
+  
+}
+.china{
+    color: gray;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+
+}
+.logo1{
+    width: 25%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    padding-left: 6.5%;
+}
+.logoA{
+    width: 50%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%; 
+    
+   
+}
+.logoB{
+    width: 25%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.startBtn{
+    background-color: #333;
+    width: 160px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+   
+}
+
+.home{
+    width: 100%;
+    height: 85vh;   
+    display: flex;
+
+}
+
+.homes{
+    width: 50%;
+    height: 85vh;  
+    display: flex;
+    flex-direction: column;
+  
+   
+}
+.homes1{
+    width: 100%;
+    min-height: 40vh; 
+    display: flex;
+    justify-content: center;
+    padding: 14%;
+    flex-direction: column;
+    
+    
+}
+.homes1 h2{
+    font-size: 28px;
+    color: grey;
+    margin: 20px 0px;
+}
+.homes1 h1{
+    font-size: 50px;
+    margin: 20px 0px;
+}
+.homes1 h4{
+   color: #333;
+   margin: 20px 0px;
+}
+.homes2{
+    width: 100%;
+    min-height: 20vh;
+    padding: 0% 14%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+.homes3{
+    width: 100%;
+    min-height: 25vh;
+    margin: 0 -7%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.homesDiv{
+    width: 300px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+}
+.homesDiv1{
+   width: 50%;
+   height: 120px;
+   
+}
+.homesDiv2{
+    width: 50%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.homeDiv2 h1{
+    color: #333;
+}
+.homeDiv2 h2{
+    color: red
+}
+.startBtn1{
+    width: 160px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    gap: 4px;
+   
+}
+.homePhoto{
+    width: 50%;
+    height: 85vh;  
+    background-image: url('images/Remove-bg.ai_1722689839130.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+a {
+    color: inherit;         
+    text-decoration: none;  
+}
+a:hover {
+    color: rgb(63, 128, 249);          
+}
+.fa-arrow-right {
+    font-size: 24px; 
+}
+.agonLogo{
+    width: 50px;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}  
+.krygPhoto{
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}  
+img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+
+@media (max-width: 1920px) {
+    .homePhoto {
+        width: 40%;
+        height: 85vh;  
+      
+    }
+  }
+
+  @media (max-width: 1920px) {
+    .cartText {
+        
+         margin: 0px; 
+      
+    }
+  }
+
+
+
+
+/* .cartText{
+    width: 70%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 20px;
+  
+} */
