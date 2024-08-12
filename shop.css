@@ -73,6 +73,7 @@
     color: #046e6c;
     border: none;  
     border-radius: 10px;
+    cursor: pointer;
 }
 .plus{
     font-size: 18px;
