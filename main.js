@@ -14,6 +14,10 @@ $('.logo').append(`<div class='logoA'>
 
 $('.logo').append(`<div class='logoB'>
      <i id="theme" class="fa-solid fa-moon"></i>
+      <div class="cartContainer">
+      <div class="cart"><i class="fa-solid fa-cart-shopping" id="shopCart"></i></div>
+      <div class="counter">0</div>
+         </div>
     </div>`);
 
 $('.home').append(`<div class='homes'>
@@ -120,39 +124,16 @@ $('.home').append(`<div class='homePhoto'>
 
 
 
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-     const db = [
+ 
+     let db = [
         {
             id: 1,
             company: "Sony",
             firstname: "4K TV Game Mini Arcade",
             secondname:"Rocker Console 32GB/64GB",
             price: "$29.80",
-            photo: "<img src='./images/timeWhite-removebg-preview.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/timeWhite-removebg-preview.png' alt='' class='photoCard'>",
+            miniPhoto:  "<img src='./images/timeWhite-removebg-preview.png' alt='' class='miniPhotoCard'>",
         },
         {
             id: 2,
@@ -160,7 +141,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "4K TV Game Mini Arcade",
             secondname:"Rocker Console 32GB/64GB",
             price: "$39.80",
-            photo: "<img src='./images/blackNavush.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/blackNavush.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/blackNavush.png' alt='' class='miniPhotoCard'>",
         },
         {
             id: 3,
@@ -168,7 +150,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "T500BT Original Wireless",
             secondname:"Bluetooth Headphone Deep",
             price: "$96.50",
-            photo: "<img src='./images/blueNavush.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/blueNavush.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/blueNavush.png' alt='' class='miniPhotoCard'>"
         },
         {
             id: 4,
@@ -176,7 +159,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "Black Walnut Wood &",
             secondname:"Aluminum Headphone Stand",
             price: "$70.80",
-            photo: "<img src='./images/blackHeadPhones.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/blackHeadPhones.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/blackHeadPhones.png' alt='' class='miniPhotoCard'>"
         },
         {
             id: 5,
@@ -184,7 +168,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "4K TV Game Mini Arcade",
             secondname:"Rocker Console 32GB/64GB",
             price: "$29.80",
-            photo: "<img src='./images/greenWhiteNavush.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/greenWhiteNavush.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/greenWhiteNavush.png' alt='' class='miniPhotoCard'>",
         },
         {
             id: 6,
@@ -192,7 +177,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "4K TV Game Mini Arcade",
             secondname:"Rocker Console 32GB/64GB",
             price: "$39.80",
-            photo: "<img src='./images/187315ca60b144c47b5c3b928ba45561.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/187315ca60b144c47b5c3b928ba45561.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/187315ca60b144c47b5c3b928ba45561.png' alt='' class='miniPhotoCard'>",
         },
         {
             id: 7,
@@ -200,7 +186,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "T500BT Original Wireless",
             secondname:"Bluetooth Headphone Deep",
             price: "$96.50",
-            photo: "<img src='./images/blackTime.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/blackTime.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/blackTime.png' alt='' class='miniPhotoCard'>",
         },
         {
             id: 8,
@@ -208,7 +195,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "Black Walnut Wood &",
             secondname:"Aluminum Headphone Stand",
             price: "$70.80",
-            photo: "<img src='./images/blueHeadPhones.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/blueHeadPhones.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/blueHeadPhones.png' alt='' class='miniPhotoCard'>",
         },
         {
             id: 9,
@@ -216,7 +204,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "4K TV Game Mini Arcade",
             secondname:"Rocker Console 32GB/64GB",
             price: "$29.80",
-            photo: "<img src='./images/10a2c1bc56236042b0ad8bea11ae3b69.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/10a2c1bc56236042b0ad8bea11ae3b69.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/10a2c1bc56236042b0ad8bea11ae3b69.png' alt='' class='miniPhotoCard'>"
         },
         {
             id: 10,
@@ -224,7 +213,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "4K TV Game Mini Arcade",
             secondname:"Rocker Console 32GB/64GB",
             price: "$39.80",
-            photo: "<img src='./images/grayNavush.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/grayNavush.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/grayNavush.png' alt='' class='miniPhotoCard'>"
         },
         {
             id: 11,
@@ -232,7 +222,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "T500BT Original Wireless",
             secondname:"Bluetooth Headphone Deep",
             price: "$96.50",
-            photo: "<img src='./images/toster.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/toster.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/toster.png' alt='' class='miniPhotoCard'>"
         },
         {
             id: 12,
@@ -240,7 +231,8 @@ $('.home').append(`<div class='homePhoto'>
             firstname: "Black Walnut Wood &",
             secondname:"Aluminum Headphone Stand",
             price: "$70.80",
-            photo: "<img src='./images/gamePAd.png' alt='' class='photoCard'>"
+            photo: "<img src='./images/gamePAd.png' alt='' class='photoCard'>",
+            miniPhoto: "<img src='./images/gamePAd.png' alt='' class='miniPhotoCard'>"
         },
     ];
     
@@ -253,39 +245,84 @@ $('.home').append(`<div class='homePhoto'>
               <h3>${el.firstname}</h3> 
               <h3>${el.secondname}</h3>
               <p><span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star" id="grayStar"></i></span></p>
-              <h3 class="add"><span class="price">${el.price}</span> <button class="btnAdd">Add <span class="plus">+</span></button></h3>  
+              <h3 class="add"><span class="price">${el.price}</span> <button class='addBtn' id=${el.id}>Add</button></h3>  
             </div>`);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    // $('.wrap').click(function (e) {
-    //     let ID = (e.target.id).substring(0, 4);
-    //     if (ID == 'user') {
-    //         let currentID = (e.target.id).substring(4);
-    //         for (let el of db) {
-    //             if (el.id == currentID) {
-    //                 // console.log(el);
-    //                 $('.popup').css('display', 'flex');
-    //                 $('.popupContainer').text(el.position);
-    //                 $('.wrap').css('filter', 'blur(10px)')
-    //             }
-    //         }
-    //     }
-    // })
+        }
     
-    // $('#close').click(function () {
-    //     $('.popup').css('display', 'none');
-    // })
-    // <p><span><i class="fa-regular fa-user"></i></span>${el.age}</p>
-    //             <p><span><i class="fa-solid fa-location-dot"></i></span>${el.country}</p
-    // <button class='btn' id="user${el.id}">More</button>
+
+
+
+        let shoppingTexCart = JSON.parse(localStorage.getItem('shoppingTexCart')) || [];
+        $('.counter').text(shoppingTexCart.length)
+        
+        let openPoppup = false;
+        $('.addBtn').click(function (e) {
+        
+            $('.cartPopup').css('display', 'none');
+            let ID = e.target.id;
+        
+            for (let el of db) {
+                if (el.id == ID) {
+                    console.log(el);
+                    shoppingTexCart.push(el);
+                    localStorage.setItem('shoppingTexCart', JSON.stringify(shoppingTexCart));
+                    $('.counter').text(shoppingTexCart.length)
+                }
+            }
+        })
+        
+        $('.cart').click(function () {
+            if (openPoppup == false) {
+                $('.cartPopup').css('display', 'flex');
+                showPopup();
+                openPoppup = true;
+            } else {
+                $('.cartPopup').css('display', 'none');
+                openPoppup = false;
+            }
+        
+        
+        })
+        
+        
+        function showPopup() {
+            shoppingTexCart = JSON.parse(localStorage.getItem('shoppingTexCart'));
+            console.log(shoppingTexCart);
+            $('.cartPopup').empty();
+            for (let el of shoppingTexCart) {
+                $('.cartPopup').append(`<div class='popupItem'>
+                    <h5>${el.miniPhoto}</h5>
+                    <h6>${el.firstname}</h6>
+                    <h6>${el.secondname}</h6>
+                    <h5>${el.price}</h5>
+                    
+                 
+                    </div>`);
+            }
+        }
+        
+        // $('#delete').click(function (e) {
+        //     let updCart = [];
+        //     if ((e.target.id).substring(0, 6) == 'delete') {
+        //         let ID = (e.target.id).substring(6);
+        
+        //         for (let el of shoppingTexCart) {
+        //             console.log(el);
+        //             if (el.id != ID) {
+        //                 updCart.push(el);
+        //             }
+        //         }
+        //     }
+           
+        //     shoppingTexCart = JSON.parse(localStorage.getItem('shoppingTexCart'));
+           
+        
+        // })
+
+        // $(document).ready(function() {
+        //     $('#delete').on('click', function() {
+        //         localStorage.removeItem('shoppingTexCart');
+                
+        //     });
+        // });
+        // <button class="deleteBtn" id="delete${el.id}">Delete</button>

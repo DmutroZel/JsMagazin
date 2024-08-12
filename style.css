@@ -141,20 +141,19 @@
     padding: 14%;
     flex-direction: column;
     
-    
 }
 .homes1 h2{
     font-size: 28px;
     color: grey;
-    margin: 20px 0px;
+    margin: 5px 0px;
 }
 .homes1 h1{
     font-size: 50px;
-    margin: 20px 0px;
+    margin: 5px 0px;
 }
 .homes1 h4{
    color: #333;
-   margin: 20px 0px;
+   margin: 5px 0px;
 }
 .homes2{
     width: 100%;
