@@ -561,7 +561,7 @@ $('.categoriesDiv').append(`<div class='categoriesDiv2'>
         let data = {
             name: $('#username').val(),
             phone: $('#phone').val(),
-            list: shoppingCart
+            list: shoppingTexCart
         };
     
         // console.log(data);
