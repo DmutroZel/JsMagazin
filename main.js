@@ -5,11 +5,11 @@ $('.logo').append(`<div class='logo1'>
     </div>`);
 
 $('.logo').append(`<div class='logoA'>
-    <h3><a href="index.html"> Home</a></h3>
-    <h3><a href="shop.html"> Shop</a></h3>
-    <h3>Categories</h3>
-    <h3>How it work?</h3>
-    <h3>Contact us</h3>
+    <h3><a href="index.html">Home</a></h3>
+    <h3><a href="shop.html">Shop</a></h3>
+    <h3><a href="categories.html">Categories</a></h3>
+    <h3><a href="howUse.html">How it work?</a></h3>
+    <h3><a href="contact.html">Contact us</a></h3>
     </div>`);
 
 $('.logo').append(`<div class='logoB'>
@@ -95,7 +95,7 @@ $('.home').append(`<div class='homePhoto'>
     $('#theme').click(function () {
         console.log(colorTheme);
         if (colorTheme == 'white') {
-            localStorage.setItem('colorTheme', 'black');
+            localStorage.setItem('colorTheme', '#333');
             colorTheme = localStorage.getItem('colorTheme');
             $('.wrap').css('backgroundColor', colorTheme);
             $('.wrap').css('color', 'white');
@@ -248,7 +248,8 @@ $('.home').append(`<div class='homePhoto'>
               <h3 class="add"><span class="price">${el.price}</span> <button class='addBtn' id=${el.id}>Add</button></h3>  
             </div>`);
         }
-    
+      
+     
 
 
 
@@ -267,6 +268,7 @@ $('.home').append(`<div class='homePhoto'>
                     shoppingTexCart.push(el);
                     localStorage.setItem('shoppingTexCart', JSON.stringify(shoppingTexCart));
                     $('.counter').text(shoppingTexCart.length)
+                   
                 }
             }
         })
@@ -287,8 +289,7 @@ $('.home').append(`<div class='homePhoto'>
         
         function showPopup() {
             shoppingTexCart = JSON.parse(localStorage.getItem('shoppingTexCart'));
-            console.log(shoppingTexCart);
-            $('.cartPopup').empty();
+            $('.cartPopupList').empty();
             for (let el of shoppingTexCart) {
                 $('.cartPopup').append(`<div class='popupItem'>
                     <h5>${el.miniPhoto}</h5>
@@ -326,3 +327,278 @@ $('.home').append(`<div class='homePhoto'>
         //     });
         // });
         // <button class="deleteBtn" id="delete${el.id}">Delete</button>
+        // 
+
+
+
+
+
+
+$('.categoriesDiv').append(`<div class='categoriesDiv1'>
+    <div class="popularCategories">
+    <h2>Popular Categories</h2>
+    <div class="infoCategories">
+        <h4>Computer - Laptop</h4> <div class="krugNumber">10</div>
+       </div>
+       <div class="infoCategories">
+       <h4>Smart phone & Tablets</h4> <div class="krugNumber">12</div>
+       </div>
+       <div class="infoCategories">
+        <h4>Fashion & Accessories</h4> <div class="krugNumber">14</div>
+       </div>
+       <div class="infoCategories">
+        <h4>Halth & Beauty</h4> <div class="krugNumber">8</div>
+       </div>
+      </div>
+    </div>`);
+
+
+
+
+
+
+
+$('.categoriesDiv').append(`<div class='categoriesDiv2'>
+    <div class='categories1'>
+      <div class='categoriesCard'>
+       <div class='categoriesCardKrug'><i class="fa-solid fa-desktop"></i></div>
+       <h5>Computer for Designer, Art</h5></div>
+      <div class='categoriesCard'>
+      <div class='categoriesCardKrug'><i class="fa-solid fa-dumbbell"></i></div>
+       <h5>Computer for Designer, Art</h5>
+      </div>
+     </div>
+    <div class='categories2'>
+      <div class='categoriesCard'>
+       <div class='categoriesCardKrug'><i class="fa-solid fa-laptop"></i></div>
+       <h5>Computer for Designer, Art</h5>
+      </div>
+      <div class='categoriesCard'>
+       <div class='categoriesCardKrug'><i class="fa-solid fa-book"></i></div>
+       <h5>Computer for Designer, Art</h5>
+      </div>
+    </div>
+    </div>`);
+
+   
+
+
+
+
+
+
+
+
+
+    let bd1 = [
+        {
+            id: 1,
+            icon:"<i class='fa-solid fa-lightbulb'></i>",
+            info: "Start Plan",
+            firstInfo: "Choose any of <br> our packages",        
+        },
+        {
+            id: 2,
+            icon:"<i class='fa-solid fa-circle-nodes'></i>",
+            info: "Connect",
+            firstInfo: "Receive concepts <br> In 24 hours", 
+        },
+        {
+            id: 3,
+            icon:"<i class='fa-solid fa-headphones'></i>",
+            info: "Match",
+            firstInfo: "Development <br> Stage",
+        },
+    ];
+ 
+    
+    for (let el of bd1) {
+        $('.howItWork').append(`<div class='tutorialCard'>
+              <div class="whiteIcon"><h5>${el.icon}</h5></div>
+              <h2>${el.info}</h2> 
+              <h4>${el.firstInfo}</h4> 
+            </div>`);
+        }
+        
+
+        
+    let bd2 = [
+        {
+            id: 4,
+            icon:"<i class='fa-solid fa-house-chimney'></i>",
+            info: "Complete",
+            firstInfo: "After-release <br> Support",
+        },
+        {
+            id: 5,
+            icon:"<i class='fa-solid fa-repeat'></i>",
+            info: "Review",
+            firstInfo: "Project launch <br> and checkout",     
+        },
+    ];
+
+    
+    for (let el of bd2) {
+        $('.howItWork2').append(`<div class='tutorialCard'>
+              <div class="whiteIcon"><h5>${el.icon}</h5></div>
+              <h2>${el.info}</h2> 
+              <h4>${el.firstInfo}</h4>  
+            </div>`);
+        }
+    
+
+
+
+
+
+
+
+ $('.contactContainer').append(`<div class='contact'>
+    <div class='newsletter'>
+       <div class='infoNewsletter'>
+            <h1>Subscribe our newsletter</h1> 
+            <h4>By clicking the button, you are agreeing with our Term & <br>Conditions</h4>
+            <div class="input-container">
+                <input type="text" class="input-field" placeholder="Enter you mail...">
+                <button class="input-button">→</button>
+            </div>
+       </div>
+
+      <div class='photoNewsletter'> <img src="./images/depositphotos_56582953-Business-people-looking-at-laptop.jpg" alt="" class="photoNewsletter2"></div>
+
+     </div>
+    </div>`);
+                    
+
+
+
+
+
+
+
+
+ $('.contactContainer').append(`<div class='contactInfo'>
+    <div class='contactFullInfo'>
+        <div class='contactFullInfoLogo'>
+         <div class='contactFullInfoLogoLogo'> 
+         <img src="./images/[removal.ai]_2d0a60d2-bd1c-4a38-aafb-c94d586b1ef1_agonlogo.png" alt="" class="agonLogo2">
+         <h2>agon</h2></div> 
+         <div class='contactFullInfoLogoAcc'> 
+            <button class="btn1"><h3>Ready to get started?</h3></button>
+            <button  class="btn2"><h3>How it works</h3> <i class="fa-solid fa-arrow-right"></i></button>
+         </div> 
+        </div>
+
+
+        <div class='contactFullInfo100'>
+        <div class='contactFullInfoText'>
+        <h3>Contact</h3>
+        <p class="grayInfo">4517 Washington Ave.</p>
+        <p class="grayInfo">Manchester, Kentucky 39495</p>
+        <p class="phoneNumber">(239) 555-0108</p>
+        <p class="gmail">contact@gmail.com</p>
+        <span>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-discord"></i>
+        </div>
+        <div class='contactFullInfoText'>
+            <h3>About us</h3>
+            <p class="grayInfo">About V1</p>
+            <p class="grayInfo">About V2</p>
+            <p class="grayInfo">About V3</p>
+            <p class="grayInfo">Service V1</p>
+            <p class="grayInfo">Service V2</p>
+            
+         </div>
+        <div class='contactFullInfoText'>
+            <h3>Discover</h3>
+            <p class="grayInfo">Our Blog V1</p>
+            <p class="grayInfo">Our Blog V2</p>
+            <p class="grayInfo">Our Blog V3</p>
+            <p class="grayInfo">Blog Single V1</p>
+            <p class="grayInfo">Page 404</p>
+         </div>
+        <div class='contactFullInfoText'>
+            <h3>Support</h3>
+            <p class="grayInfo">FAQs</p>
+            <p class="grayInfo">FAQ V2 </p>
+            <p class="grayInfo">Career </p>
+            <p class="grayInfo">Career Detail </p>
+            <p class="grayInfo">Contact </p>
+         </div>
+        <div class='contactFullInfoText'>
+            <h3>Useful links</h3>
+            <p class="grayInfo">Shop</p>
+            <p class="grayInfo">Shop V2</p>
+            <p class="grayInfo">Pricing V1 </p>
+            <p class="grayInfo">Pricing V2 </p>
+            <p class="grayInfo">Terms & Conditions</p>
+         </div>
+        </div>
+
+
+        
+    
+        <div class='contactFullInfoOfficial'>
+          <div class='contactFullInfoOfficial1'>
+          <h3>@Agon Official 2024</h3>
+          </div> 
+          <div class='contactFullInfoOfficial2'>
+           <p class="grayInfo">Privacy policy</p>
+           <p class="grayInfo">Cookies</p>
+           <p class="grayInfo">Terms of service</p>
+          </div>  
+        </div>
+
+        
+     </div>
+    </div>`);
+
+    $('#orderBtn').click(function () {
+        shoppingTexCart = JSON.parse(localStorage.getItem('shoppingTexCart'));
+        let data = {
+            name: $('#username').val(),
+            phone: $('#phone').val(),
+            list: shoppingCart
+        };
+    
+        // console.log(data);
+        let message = `Name: ${data.name}, Phone: ${data.phone} `;
+    
+        for (let el of shoppingTexCart) {
+            message += el.name + '|';
+        }
+    
+        $('#cartList').val(message);
+        // console.log($('#cartList').val());
+    
+    
+        fetch('https://formspree.io/f/xdknlnza', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(res => {
+                showNotification('Відправлено');
+                $('#username').val('');
+                $('#phone').val('');
+                $('.cartPopup').css('display', 'none');
+                // localStorage.setItem('shoppingTexCart', []);
+                $('.counter').text(shoppingTexCart.length);
+            })
+    })
+    
+    
+    
+    function showNotification(message) {
+        $('.notification').css('display', 'flex');
+        $('.notification').text(message);
+    
+        setTimeout(function () {
+            $('.notification').css('display', 'none');
+        }, 3000)
+    }

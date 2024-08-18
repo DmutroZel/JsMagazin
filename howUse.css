@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Montserrat;
+}
+.logo{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+
+}
+.logo1{
+    width: 25%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    padding-left: 6.5%;
+}
+.logoA{
+    width: 50%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logoB{
+    width: 25%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.textLogo2{
+    width: 100%;
+    height: 15vh;
+    display: flex; 
+    align-items: center;  
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+ 
+}
+.textLogo2 h1{
+    margin-bottom: 10px;
+}
+
+.howItWork{
+    width: 100%;
+    min-height: 35vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.howItWork2{
+    width: 100%;
+    min-height: 35vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tutorialCard{
+    background-color: #D1ECFD;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 20px;
+}
+.tutorialCard h4{
+ color: #667085;
+ font-weight: 500;
+ text-align: center;
+}
+
+.whiteIcon{
+    background-color: white;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-lightbulb{
+    font-size: 40px;
+    color: #101828;
+}
+.fa-circle-nodes{
+    font-size: 40px;
+    color: #101828;
+}
+.fa-headphones{
+    font-size: 40px;
+    color: #101828;
+}
+.fa-house-chimney{
+    font-size: 40px;
+    color: #101828;
+}
+.fa-repeat{
+    font-size: 40px;
+    color: #101828;
+}
+
+
+
+
+
+a {
+    color: inherit;         
+    text-decoration: none;  
+}
+a:hover {
+    color: rgb(63, 128, 249);          
+}
+
+.agonLogo{
+    width: 50px;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}  
+ 
+img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+.cartContainer {
+    display: flex;
+    align-items: center;
+}
+.counter {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(224, 78, 78);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    top: -15px;
+    margin: 3px;
+    font-weight: 700;
+}
+
