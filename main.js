@@ -556,6 +556,22 @@ $('.categoriesDiv').append(`<div class='categoriesDiv2'>
      </div>
     </div>`);
 
+    $(document).click(function (e) {
+        let updCart = [];
+        if ((e.target.id).substring(0, 6) == 'delete') {
+            let ID = (e.target.id).substring(6);
+    
+            for (let el of shoppingTexCart) {
+                console.log(el);
+                if (el.id != ID) {
+                    updCart.push(el);
+                }
+            }
+        }
+        shoppingTexCart = JSON.parse(localStorage.getItem('shoppingTexCart'));
+
+    
+    })
     $('#orderBtn').click(function () {
         shoppingTexCart = JSON.parse(localStorage.getItem('shoppingTexCart'));
         let data = {
@@ -564,15 +580,13 @@ $('.categoriesDiv').append(`<div class='categoriesDiv2'>
             list: shoppingTexCart
         };
     
-        // console.log(data);
         let message = `Name: ${data.name}, Phone: ${data.phone} `;
     
         for (let el of shoppingTexCart) {
-            message += el.name + '|';
+            message += el.firstname + '|';
         }
     
         $('#cartList').val(message);
-        // console.log($('#cartList').val());
     
     
         fetch('https://formspree.io/f/xdknlnza', {
@@ -587,7 +601,6 @@ $('.categoriesDiv').append(`<div class='categoriesDiv2'>
                 $('#username').val('');
                 $('#phone').val('');
                 $('.cartPopup').css('display', 'none');
-                // localStorage.setItem('shoppingTexCart', []);
                 $('.counter').text(shoppingTexCart.length);
             })
     })
