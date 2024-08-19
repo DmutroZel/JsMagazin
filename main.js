@@ -81,9 +81,8 @@ $('.home').append(`<div class='homePhoto'>
 
     $(document).ready(function(){
         function startTimer(timerId, localStorageKey) {
-            var targetDate;
+            let targetDate;
     
-            // Перевіряємо, чи збережений час закінчення таймера в LocalStorage
             if (localStorage.getItem(localStorageKey)) {
                 targetDate = new Date(localStorage.getItem(localStorageKey));
             } else {
@@ -92,18 +91,18 @@ $('.home').append(`<div class='homePhoto'>
                 targetDate.setHours(targetDate.getHours() + 24);
                 targetDate.setMinutes(targetDate.getMinutes() + 30);
                 targetDate.setSeconds(targetDate.getSeconds() + 56);
-                localStorage.setItem(localStorageKey, targetDate); // зберігаємо час закінчення в LocalStorage
+                localStorage.setItem(localStorageKey, targetDate); 
             }
     
             function updateTimer() {
-                var now = new Date();
-                var timeRemaining = targetDate - now;
+                let now = new Date();
+                let timeRemaining = targetDate - now;
     
                 if (timeRemaining > 0) {
-                    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                    var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                    let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
     
                     $('#days' + timerId).text(days);
                     $('#hours' + timerId).text(hours);
@@ -112,14 +111,13 @@ $('.home').append(`<div class='homePhoto'>
                 } else {
                     clearInterval(timerInterval);
                     $('#timer' + timerId).text('Таймер завершено!');
-                    localStorage.removeItem(localStorageKey); // Видаляємо час закінчення з LocalStorage
+                    localStorage.removeItem(localStorageKey); 
                 }
             }
     
-            var timerInterval = setInterval(updateTimer, 1000);
+            let timerInterval = setInterval(updateTimer, 1000);
         }
-    
-        // Запуск трьох таймерів з унікальними ключами
+
         startTimer(1, 'timerEndTime1');
         startTimer(2, 'timerEndTime2');
         startTimer(3, 'timerEndTime3');
