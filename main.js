@@ -56,7 +56,6 @@ $('.akchiya').append(`<div class='cartAkchiya'> <div class='cartPhoto'></div>
     <h4 class="china">$29.80 </h4>
      </div>   
     </div>
-
     <div class='cartAkchiya'> <div class='cartPhoto2'></div>
     <div class='cartText'>
     <h3>Cancelling Headset Music </h3>
@@ -73,11 +72,58 @@ $('.akchiya').append(`<div class='cartAkchiya'> <div class='cartPhoto'></div>
     </div>
     </div>` 
 );
+  
+
 $('.home').append(`<div class='homePhoto'>
     
     </div>`);
-            
+   
 
+    $(document).ready(function(){
+        function startTimer(timerId, localStorageKey) {
+            var targetDate;
+    
+            // Перевіряємо, чи збережений час закінчення таймера в LocalStorage
+            if (localStorage.getItem(localStorageKey)) {
+                targetDate = new Date(localStorage.getItem(localStorageKey));
+            } else {
+                targetDate = new Date();
+                targetDate.setDate(targetDate.getDate() + 20);
+                targetDate.setHours(targetDate.getHours() + 24);
+                targetDate.setMinutes(targetDate.getMinutes() + 30);
+                targetDate.setSeconds(targetDate.getSeconds() + 56);
+                localStorage.setItem(localStorageKey, targetDate); // зберігаємо час закінчення в LocalStorage
+            }
+    
+            function updateTimer() {
+                var now = new Date();
+                var timeRemaining = targetDate - now;
+    
+                if (timeRemaining > 0) {
+                    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    
+                    $('#days' + timerId).text(days);
+                    $('#hours' + timerId).text(hours);
+                    $('#minutes' + timerId).text(minutes);
+                    $('#seconds' + timerId).text(seconds);
+                } else {
+                    clearInterval(timerInterval);
+                    $('#timer' + timerId).text('Таймер завершено!');
+                    localStorage.removeItem(localStorageKey); // Видаляємо час закінчення з LocalStorage
+                }
+            }
+    
+            var timerInterval = setInterval(updateTimer, 1000);
+        }
+    
+        // Запуск трьох таймерів з унікальними ключами
+        startTimer(1, 'timerEndTime1');
+        startTimer(2, 'timerEndTime2');
+        startTimer(3, 'timerEndTime3');
+    });
     let colorTheme = localStorage.getItem('colorTheme') || 'white';
 
     if (colorTheme == 'white') {
@@ -104,6 +150,7 @@ $('.home').append(`<div class='homePhoto'>
             $('.cartAkchiya').css('border', '1px solid white');
             $('.textLogo').css('backgroundColor', 'colorTheme');
             $('.textLogo').css('color', 'white');
+            $('.cartPopup').css('backgroundColor', '#333');
         } else {
             localStorage.setItem('colorTheme', 'white');
             colorTheme = localStorage.getItem('colorTheme');
@@ -114,6 +161,7 @@ $('.home').append(`<div class='homePhoto'>
             $('.cartAkchiya').css('border', '1px solid black');
             $('.textLogo').css('backgroundColor', 'colorTheme');
             $('.textLogo').css('color', 'black');
+            $('.cartPopup').css('backgroundColor', 'white');
         }
     })
 
@@ -615,3 +663,4 @@ $('.categoriesDiv').append(`<div class='categoriesDiv2'>
             $('.notification').css('display', 'none');
         }, 3000)
     }
+
